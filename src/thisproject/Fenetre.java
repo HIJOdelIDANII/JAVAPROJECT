@@ -3,16 +3,24 @@ package thisproject;
 import javax.swing.*;
 
 public class Fenetre extends JFrame {
-    public Fenetre()
-    {
+    public static int width;
+    public static int  height;
+    public Fenetre(int width,int height )
+    {   this.width=width;this.height=height;
         this.setTitle("Dessin");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(400,350);
+        this.setSize(width,height);
         this.setLocationRelativeTo(null);
-        MyComponent my_component= new MyComponent("Red","Rectangle");
-        this.setContentPane(my_component);
+        MainPanel MyMainPanel= new MainPanel();
+        this.setContentPane(MyMainPanel);
 
 
         this.setVisible(true);
+    }
+    public static int getWidth_frame() {
+        return width;
+    }
+    public static int getHeight_frame() {
+        return height;
     }
 }
