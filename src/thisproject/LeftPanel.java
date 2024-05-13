@@ -12,14 +12,33 @@ public class LeftPanel extends JPanel {
     private JRadioButton bBleu=new JRadioButton("Bleu");
     private ButtonGroup groupe=new ButtonGroup();
     private Box vertical_box=Box.createVerticalBox();
+
+    public JComboBox getCombo() {
+        return combo;
+    }
+
+    public JRadioButton getbRouge() {
+        return bRouge;
+    }
+
+    public JRadioButton getbVert() {
+        return bVert;
+    }
+
+    public JRadioButton getbBleu() {
+        return bBleu;
+    }
+
     public LeftPanel()
     {
+
         this.setBackground(Color.cyan);
         bRouge.setBackground(Color.cyan);bVert.setBackground(Color.cyan);bBleu.setBackground(Color.cyan);
 
         this.setPreferredSize(new Dimension((int)(Fenetre.getWidth_frame()/4),Fenetre.getHeight_frame()));
 
         combo.addItem("triangle");combo.addItem("rectangle");combo.addItem("ovale");
+        bVert.setSelected(true);
         groupe.add(bRouge);groupe.add(bVert);groupe.add(bBleu);
         this.add(vertical_box);
         vertical_box.add(label1);vertical_box.add(combo);vertical_box.add(Box.createVerticalStrut(20));
